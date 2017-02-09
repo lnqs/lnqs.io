@@ -1,0 +1,127 @@
+* { /* csslint allow: universal-selector */
+  cursor: default;
+}
+
+body {
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  font-family: monospace;
+  font-size: 18px;
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  transition: all .75s;
+  user-select: none;
+}
+
+body:fullscreen {
+  animation-duration: 0.25s;
+  animation-iteration-count: infinite;
+  animation-name: elements;
+  background: radial-gradient(#111, #000);
+  color: #eee;
+  text-shadow: -2.5px 0 1.5px red, 2.5px 0 1.5px green;
+  width: 100%;
+}
+
+body:fullscreen::before {
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-name: background;
+  animation-timing-function: steps(40, end);
+  content: "";
+  height: 300%;
+  left: -100%;
+  pointer-events: none;
+  position: absolute;
+  top: -100%;
+  width: 300%;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+footer {
+  font-size: 12px;
+  padding: 32px;
+  text-align: center;
+}
+
+body:fullscreen footer {
+  display: none;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+a {
+  color: #00c;
+  text-decoration: none;
+}
+
+.flash {
+  animation-duration: 0.25s;
+  animation-iteration-count: 1;
+  animation-name: flash;
+}
+
+.fadeout {
+  transform: scale(1, 0);
+  transition: transform .1s;
+}
+
+.menu {
+  list-style-type: none;
+}
+
+.menu li {
+  color: #777;
+  margin-top: 8px;
+}
+
+.menu li.active {
+  color: inherit;
+}
+
+.menu li.active::before {
+  content: '> ';
+}
+
+.menu li.active::after {
+  content: ' <';
+}
+
+@keyframes background {
+  0% {transform: translate(-10%, 10%);}
+  10% {transform: translate(-25%, 0%);}
+  20% {transform: translate(-30%, 10%);}
+  30% {transform: translate(-30%, 30%);}
+  40% {transform: translate(0%, 0%);}
+  50% {transform: translate(-15%, 10%);}
+  60% {transform: translate(-20%, 20%);}
+  70% {transform: translate(-5%, 20%);}
+  80% {transform: translate(-25%, 5%);}
+  90% {transform: translate(-30%, 25%);}
+  100% {transform: translate(-10%, 10%);}
+}
+
+@keyframes elements {
+  0% {transform: translate(-.5px, .5px);}
+  25% {transform: translate(.5px, -.5px);}
+  50% {transform: translate(.5px, .5px);}
+  75% {transform: translate(-.5px, -.5px);}
+  100% {transform: translate(.5px, 0px);}
+}
+
+@keyframes flash {
+  0% {background: none;}
+  50% {background-color: #444;}
+  100% {background: none;}
+}
