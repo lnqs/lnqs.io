@@ -79,6 +79,10 @@ input {
   text-shadow: inherit;
 }
 
+pre {
+  font-size: 8px;
+}
+
 .flash {
   animation-duration: 0.25s;
   animation-iteration-count: 1;
