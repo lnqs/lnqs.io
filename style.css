@@ -66,6 +66,19 @@ a {
   text-decoration: none;
 }
 
+input {
+  background: none;
+  border: 1px solid #aaa;
+  color: inherit;
+  font-family: monospace;
+  font-size: 18px;
+  line-height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 30%;
+  text-shadow: inherit;
+}
+
 .flash {
   animation-duration: 0.25s;
   animation-iteration-count: 1;
