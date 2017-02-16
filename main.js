@@ -59,6 +59,7 @@ $('#enter').click(function () {
     if (modloader.atExit) {
       modloader.atExit();
     }
+    modloader.cancelDelayedLoading();
   });
 
   modloader.load('entry');
