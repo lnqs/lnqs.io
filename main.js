@@ -48,13 +48,19 @@ if (!compat) {
     '</div>');
 }
 
+function preventDefault(event) {
+  event.preventDefault();
+}
+
 $('#enter').click(function () {
   audio.play();
   background.setup();
+  $(document).on('contextmenu', preventDefault);
 
   fullscreen.enter(function () {
     $('main').html('<h1>It\'s really a shame to see you leave...</h1>');
     audio.stop();
+    $(document).off('contextmenu', preventDefault);
 
     if (modloader.atExit) {
       modloader.atExit();
