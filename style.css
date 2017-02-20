@@ -75,7 +75,9 @@ input {
   line-height: 30px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 30%;
+  margin-top: 20px;
+  max-width: 40%;
+  min-width: 40%;
   text-shadow: inherit;
 }
 
